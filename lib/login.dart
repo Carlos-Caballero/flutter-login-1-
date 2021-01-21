@@ -1,31 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   String user = "";
   String pass = "";
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(240, 94, 100, 10),
         centerTitle: true,
         title: Text('AppRest'),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 300.0,
-          ),
-          _userTextField(),
-          SizedBox(
-            height: 15.0,
-          ),
-          _userPassword(),
-          SizedBox(
-            height: 25,
-          ),
-          _bottonLogin()
-        ],
+      body: Container(
+        color: Color.fromRGBO(249, 246, 239, 10),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 300.0,
+            ),
+            _userTextField(),
+            SizedBox(
+              height: 15.0,
+            ),
+            _userPassword(),
+            SizedBox(
+              height: 25,
+            ),
+            _bottonLogin()
+          ],
+        ),
       ),
     );
   }
@@ -74,7 +82,7 @@ class Login extends StatelessWidget {
         child: Text('Iniciar sesión'),
       ),
       elevation: 10,
-      color: Colors.cyan,
+      color: Color.fromRGBO(42, 200, 194, 10),
       onPressed: () {
         Fluttertoast.showToast(
             msg: 'User: $user \n Pass: $pass',
